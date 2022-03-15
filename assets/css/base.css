@@ -28,6 +28,7 @@ p {
     max-width: 100%;
     margin: 0 auto;
     background-color: #f0f0f0;
+    margin-top: 75px;
 }
 .grid_full-width {
     width: 100%;
