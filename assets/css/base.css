@@ -38,10 +38,6 @@ p {
     flex-wrap: wrap;
 }
 
-.header {
-    background-color: #fff;
-    border-bottom: 2px solid var(--primary-color);
-}
 body {
     background-color: #f0f0f0
 }
