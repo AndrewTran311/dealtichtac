@@ -132,12 +132,21 @@
     width: 22px;
     background-position: -365px 0;
 }
+.icon_hot:hover {
+    width: 22px;
+    background-position: -365px -32px;
+}
 .header_icon_add_hot {
     width: 22px;
 }
 .icon_sale {
     width: 43px;
     background-position: -390px 0;
+    margin-left: 10px;
+}
+.icon_sale:hover {
+    width: 43px;
+    background-position: -390px -32px;
     margin-left: 10px;
 }
 .header_icon_add_sale {
@@ -150,6 +159,10 @@
     width: 21px;
     background-position: 0 0;
 }
+.icon_mouse:hover {
+    width: 21px;
+    background-position: 0 -34px;
+}
 .header_icon_add_headphone {
     width: 62px;
 }
@@ -157,12 +170,20 @@
     width: 31px;
     background-position: -24px 0;
 }
+.icon_headphone:hover {
+    width: 31px;
+    background-position: -24px -34px;
+}
 .header_icon_add_loudspeaker {
     width: 31px;
 }
 .icon_loudspeaker {
     width: 31px;
-    background-position: -55px 0;
+    background-position: -55px -1px;
+}
+.icon_loudspeaker:hover {
+    width: 31px;
+    background-position: -55px -35px;
 }
 .header_icon_add_equiqment {
     width: 74px;
@@ -171,12 +192,20 @@
     width: 35px;
     background-position: -129px 0;
 }
+.icon_equiqment:hover {
+    width: 35px;
+    background-position: -129px -34px;
+}
 .header_icon_add_Cable {
     width: 46px;
 }
 .icon_Cable {
     width: 36px;
     background-position: -88px 0;
+}
+.icon_Cable:hover {
+    width: 36px;
+    background-position: -88px -34px;
 }
 .header_icon_add_battery {
     width: 73px;
@@ -185,12 +214,20 @@
     width: 34px;
     background-position: -269px 0;
 }
+.icon_battery:hover {
+    width: 34px;
+    background-position: -269px -34px;
+}
 .header_icon_add_wireless {
     width: 46px;
 }
 .icon_wireless {
     width: 26px;
     background-position: -164px 0;
+}
+.icon_wireless:hover {
+    width: 26px;
+    background-position: -164px -34px;
 }
 .header_icon_add_keyboarb {
     width: 52px;
@@ -199,12 +236,20 @@
     width: 39px;
     background-position: -197px 0;
 }
+.icon_keyboarb:hover {
+    width: 39px;
+    background-position: -197px -34px;
+}
 .header_icon_add_USB {
     width: 25px;
 }
 .icon_USB {
     width: 31px;
     background-position: -239px 0;
+}
+.icon_USB:hover {
+    width: 31px;
+    background-position: -239px -34px;
 }
 .icon_recruitment {
     width: 80px;
@@ -687,7 +732,9 @@
 .product_bottom_all_item_name { 
     font-size: 14px;
     color: var(--black-color);
-    padding: 27px 79px 24px 10px;
+    width: 100%;
+    height: 100%;
+    padding-top: 26px;
 }
 .product_bottom_all_link:hover {
     border: 1px solid #6c3;
