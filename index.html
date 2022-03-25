@@ -127,41 +127,9 @@
                         <img class="header_content_top_img"
                             src="https://dealtichtac.com/product/hinhquangcao/cover%202.png" alt="image Shop">
                     </div>
-                    <div class="header_content_top_right">
-                        <ul class="header_content_top_right_item">
-                            <li class="header_content_top_right_item_small">
-                                <div class="header_content_top_right_item_small_img">
-                                    <img class="item_small_img"
-                                        src="https://dealtichtac.com/product/hinhquangcao/cover%20face.jpg" alt="">
-                                </div>
-                                <div class="item_small_introduction">
-                                    <span class="item_small_introduction_title">GIỚI THIỆU</span>
-                                    <p class="item_small_introduction_centent">
-                                        Hệ thống cửa hàng phụ kiện điện thoại - laptop hàng đầu tại Cần Thơ</p>
-                                </div>
-                            </li>
-                            <li class="header_content_top_right_item_small">
-                                <div class="header_content_top_right_item_small_img item_small_img_shop">
-                                    <img class="item_small_img"
-                                        src="https://dealtichtac.com/product/hinhquangcao/cover%202.png" alt="">
-                                </div>
-                                <div class="item_small_introduction">
-                                    <span class="item_small_introduction_title">CỬA HÀNG Deal tích tắc</span>
-                                    <p class="item_small_introduction_centent">
-                                        Cửa hàng phụ kiện điện thoại - laptop tại Cần Thơ</p>
-                                </div>
-                            </li>
-                            <li class="header_content_top_right_item_small">
-                                <div class="header_content_top_right_item_small_img">
-                                    <img class="item_small_img" src="https://dealtichtac.com/product/hinhquangcao/.png"
-                                        alt="">
-                                </div>
-                                <div class="item_small_introduction">
-                                    <span class="item_small_introduction_title">NHIỀU SẢN PHẨM</span>
-                                    <p class="item_small_introduction_centent">
-                                        Có nhiều sản phẩm độc đáo, mới, xu hướng cho khách hàng lựa chọn</p>
-                                </div>
-                            </li>
+                    <div class="headerIntroduceShopp_right">
+                        <ul class="header_content_top_right_item" id="header_content_top_right_item_id">
+                            
                         </ul>
                     </div>
                 </div>
@@ -451,43 +419,8 @@
                     </ul>
                 </div>
                 <div class="product_menu_bottom">
-                    <ul class="product_menu_bottom_item">
-                        <li>
-                            <a class="product_menu_bottom_item_link"
-                                href="https://www.dealtichtac.com/phu-kien-dien-thoai.html">
-                                430 phụ kiện điện thoại
-                            </a>
-                        </li>
-                        <li>
-                            <a class="product_menu_bottom_item_link"
-                                href="https://www.dealtichtac.com/phu-kien-laptop.html">
-                                384 phụ kiện laptop
-                            </a>
-                        </li>
-                        <li>
-                            <a class="product_menu_bottom_item_link"
-                                href="https://www.dealtichtac.com/hang-doc-la.html">
-                                69 hàng độc lạ
-                            </a>
-                        </li>
-                        <li>
-                            <a class="product_menu_bottom_item_link"
-                                href="https://www.dealtichtac.com/do-gia-dung.html">
-                                22 đồ gia dụng
-                            </a>
-                        </li>
-                        <li>
-                            <a class="product_menu_bottom_item_link"
-                                href="https://www.dealtichtac.com/thiet-bi-mang.html">
-                                18 thiết bị mạng
-                            </a>
-                        </li>
-                        <li>
-                            <a class="product_menu_bottom_item_link"
-                                href="https://www.dealtichtac.com/dung-cu-lam-dep.html">
-                                2 dụng cụ làm đẹp
-                            </a>
-                        </li>
+                    <ul class="product_menu_bottom_item" id="product_menu_bottom_item_id">
+
                     </ul>
                 </div>
             </div>
@@ -559,7 +492,6 @@
                         </ul>
                     </div>
                     <div class="footer_center_left">
-
                     </div>
                 </div>
                 <div class="footer_bottom">
@@ -864,6 +796,53 @@
             .then((res) => res.json())
             .then((result) => {
                 renderAccessoriesStrangeProduct(result.filter((item, idx) => idx < 10))
+            });
+
+
+        const renderMenuProduct = (menuProduct) => {
+            let contentMenuProduct = "";
+            menuProduct.map((item, idx) => {
+                contentMenuProduct =
+                    contentMenuProduct +
+                    `<li>
+                            <a class="product_menu_bottom_item_link"
+                                href="https://www.dealtichtac.com/phu-kien-dien-thoai.html">
+                                ` + item + `
+                            </a>
+                        </li>`;
+            });
+            document.getElementById("product_menu_bottom_item_id").innerHTML = contentMenuProduct;
+        };
+        fetch("https://www.dealtichtac.com/api/index.php?statistic")
+            .then((res) => res.json())
+            .then((result) => {
+                renderMenuProduct(result);
+            });
+
+
+        const renderIntroduceShop = (introduceShop) => {
+            let contentIntroduceShop = "";
+            introduceShop.map((item, idx) => {
+                contentIntroduceShop =
+                    contentIntroduceShop +
+                    `<li class="header_content_top_right_item_small">
+                                <div class="header_content_top_right_item_small_img">
+                                    <img class="item_small_img"
+                                        src="https://dealtichtac.com/product/hinhquangcao/` + item.hinhanh + `" alt="">
+                                </div>
+                                <div class="item_small_introduction">
+                                    <span class="item_small_introduction_title">` + item.ten + `</span>
+                                    <p class="item_small_introduction_centent">
+                                        ` + item.noidung + `</p>
+                                </div>
+                            </li>`;
+            });
+            document.getElementById("header_content_top_right_item_id").innerHTML = contentIntroduceShop;
+        };
+        fetch("https://www.dealtichtac.com/api/index.php?slider")
+            .then((res) => res.json())
+            .then((result) => {
+                renderIntroduceShop(result);
             });
     </script>
 </body>
